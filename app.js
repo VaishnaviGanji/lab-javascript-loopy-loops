@@ -54,3 +54,89 @@
 // "Was it a car or a cat I saw?" and "No 'x' in Nixon".
 
 // Hint: If you use Google to help you to find solution to this iteration, you might run into some solutions that use advanced string or array methods (such as join(), reverse(), etc.). However, try to apply the knowledge you currently have since you can build pretty nice solution with just using for loop, if-else statements with some break and continue... Just sayin' 
+
+var ProGrad_1 = "Vaishnavi";
+var ProGrad_2 = "Veda";
+console.log(`The driver's name is ${Prograd_1}.`);
+console.log(`The navigator's name is ${ProGrad_2}.`);
+
+var len1 = 0;
+var len2 = 0;
+while (ProGrad_1[len1] != undefined) {
+    len1++;
+}
+while (ProGrad_2[len2] != undefined) {
+    len2++;
+}
+if (len1 > len2) {
+    console.log(`The driver has the longest name, it has ${len1} characters.`);
+} else if (len2 > len1) {
+    console.log(`It seems that the navigator has the longest name, it has ${len2} characters.`);
+} else {
+    console.log(`Wow, you both have equally long names, ${len2} characters!.`);
+}
+
+var vowel_count = 0;
+var vowels = [];
+var indices = []
+for (var i = 0; i < ProGrad_1.length; i++) {
+    if (ProGrad_1[i] == 'a' || ProGrad_1[i] == 'e' || ProGrad_1[i] == 'i' || ProGrad_1[i] == 'o' || ProGrad_1[i] == 'u' || 
+    ProGrad_1[i] == 'A' || ProGrad_1[i] == 'E' || ProGrad_1[i] == 'I' || ProGrad_1[i] == 'O' || ProGrad_1[i] == 'U') {
+        vowels.push(ProGrad_1[i]);
+        indices.push(i);
+        vowel_count++;
+    }
+}
+if (vowel_count == 0) {
+    console.log("no vowels");
+} else {
+    console.log(`${ProGrad_1} `);
+    for (var i = 0; i < vowels.length; i++) {
+        console.log(`${vowels[i]} `);
+    }
+    for(var i = 0; i < indices.length; i++) {
+        console.log(`${indices[i]} `);
+    }
+}
+
+var lowercase_count = 0;
+var uppercase_count = 0;
+for(var i = 0; i < ProGrad_1.length; i++) {
+    if(ProGrad_1[i] >= 'a' && ProGrad_1 <= 'z')
+    lowercase_count++;
+    else
+    uppercase_count++;
+}
+console.log(`Uppercase characters count ${uppercase_count}.`);
+console.log(`Lowercase characters count ${lowercase_count}.`);
+
+var res = "";
+for(var i = 0; i < ProGrad_1.length; i++) {
+    if (ProGrad_1[i] >= 'a' && ProGrad_1[i] <= 'z') {
+        res += String.fromCharCode(ProGrad_1.charCodeAt(i) - 32) + " ";
+    } else {
+        res += ProGrad_1[i];
+    }
+}
+console.log(res);
+
+res = "";
+for (var i = ProGrad_1.length - 1; i >= 0; i--) {
+    res += (ProGrad_1[i]);
+}
+console.log(res);
+
+res = ProGrad_1 + " " + ProGrad_2;
+console.log(res);
+
+res = ProGrad_2 + " " + ProGrad_1;
+console.log(res);
+
+var comp = ProGrad_1 < ProGrad_2 ? -1 : (ProGrad_1 > ProGrad_2 ? 1 : 0);;
+if (comp == -1) {
+    console.log("The driver's name goes first.");
+} else if (comp == 1) {
+    console.log("Yo, the navigator goes first definitely.");
+} else {
+    console.log("What?! You both have the same name?");
+}
